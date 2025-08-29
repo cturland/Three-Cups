@@ -1,0 +1,302 @@
+name: Autograding Tests – COCI06C5P1 (Trik)
+on:
+  - push
+  - workflow_dispatch
+  - repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: "Test 1: Sample 1 AB -> 3"
+      id: t1
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: COCI06C5P1 T1
+        command: python3 solution.py
+        input: |
+          AB
+        expected-output: "3"
+        comparison-method: exact
+        timeout: 2
+        max-score: 1
+
+    - name: "Test 2: Sample 2 CBABCACCC -> 1"
+      id: t2
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: COCI06C5P1 T2
+        command: python3 solution.py
+        input: |
+          CBABCACCC
+        expected-output: "1"
+        comparison-method: exact
+        timeout: 2
+        max-score: 1
+
+    - name: "Test 3: Single A -> 2"
+      id: t3
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: COCI06C5P1 T3
+        command: python3 solution.py
+        input: |
+          A
+        expected-output: "2"
+        comparison-method: exact
+        timeout: 2
+        max-score: 1
+
+    - name: "Test 4: Single B -> 1"
+      id: t4
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: COCI06C5P1 T4
+        command: python3 solution.py
+        input: |
+          B
+        expected-output: "1"
+        comparison-method: exact
+        timeout: 2
+        max-score: 1
+
+    - name: "Test 5: Single C -> 3"
+      id: t5
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: COCI06C5P1 T5
+        command: python3 solution.py
+        input: |
+          C
+        expected-output: "3"
+        comparison-method: exact
+        timeout: 2
+        max-score: 1
+
+    - name: "Test 6: AA returns to start -> 1"
+      id: t6
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: COCI06C5P1 T6
+        command: python3 solution.py
+        input: |
+          AA
+        expected-output: "1"
+        comparison-method: exact
+        timeout: 2
+        max-score: 1
+
+    - name: "Test 7: BB returns to start -> 1"
+      id: t7
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: COCI06C5P1 T7
+        command: python3 solution.py
+        input: |
+          BB
+        expected-output: "1"
+        comparison-method: exact
+        timeout: 2
+        max-score: 1
+
+    - name: "Test 8: CC returns to start -> 1"
+      id: t8
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: COCI06C5P1 T8
+        command: python3 solution.py
+        input: |
+          CC
+        expected-output: "1"
+        comparison-method: exact
+        timeout: 2
+        max-score: 1
+
+    - name: "Test 9: BA -> 2"
+      id: t9
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: COCI06C5P1 T9
+        command: python3 solution.py
+        input: |
+          BA
+        expected-output: "2"
+        comparison-method: exact
+        timeout: 2
+        max-score: 1
+
+    - name: "Test 10: AC -> 2"
+      id: t10
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: COCI06C5P1 T10
+        command: python3 solution.py
+        input: |
+          AC
+        expected-output: "2"
+        comparison-method: exact
+        timeout: 2
+        max-score: 1
+
+    - name: "Test 11: CA -> 3"
+      id: t11
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: COCI06C5P1 T11
+        command: python3 solution.py
+        input: |
+          CA
+        expected-output: "3"
+        comparison-method: exact
+        timeout: 2
+        max-score: 1
+
+    - name: "Test 12: BC -> 3"
+      id: t12
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: COCI06C5P1 T12
+        command: python3 solution.py
+        input: |
+          BC
+        expected-output: "3"
+        comparison-method: exact
+        timeout: 2
+        max-score: 1
+
+    - name: "Test 13: CB -> 2"
+      id: t13
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: COCI06C5P1 T13
+        command: python3 solution.py
+        input: |
+          CB
+        expected-output: "2"
+        comparison-method: exact
+        timeout: 2
+        max-score: 1
+
+    - name: "Test 14: Mixed short ABC -> 1"
+      id: t14
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: COCI06C5P1 T14
+        command: python3 solution.py
+        input: |
+          ABC
+        expected-output: "1"
+        comparison-method: exact
+        timeout: 2
+        max-score: 1
+
+    - name: "Test 15: Mixed short ACB -> 3"
+      id: t15
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: COCI06C5P1 T15
+        command: python3 solution.py
+        input: |
+          ACB
+        expected-output: "3"
+        comparison-method: exact
+        timeout: 2
+        max-score: 1
+
+    - name: "Test 16: Long alternating ABABABA -> 2"
+      id: t16
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: COCI06C5P1 T16
+        command: python3 solution.py
+        input: |
+          ABABABA
+        expected-output: "2"
+        comparison-method: exact
+        timeout: 2
+        max-score: 1
+
+    - name: "Test 17: Long alternating BCBCBCBC -> 3"
+      id: t17
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: COCI06C5P1 T17
+        command: python3 solution.py
+        input: |
+          BCBCBCBC
+        expected-output: "3"
+        comparison-method: exact
+        timeout: 2
+        max-score: 1
+
+    - name: "Test 18: All types repeating ABC×4 -> 1"
+      id: t18
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: COCI06C5P1 T18
+        command: python3 solution.py
+        input: |
+          ABCABCABCABC
+        expected-output: "1"
+        comparison-method: exact
+        timeout: 2
+        max-score: 1
+
+    - name: "Test 19: Edge length 50 (A×50) -> 1"
+      id: t19
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: COCI06C5P1 T19
+        command: python3 solution.py
+        input: |
+          AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        expected-output: "1"
+        comparison-method: exact
+        timeout: 2
+        max-score: 1
+
+    - name: "Test 20: Edge length 50 (ABC repeating) -> 3"
+      id: t20
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: COCI06C5P1 T20
+        command: python3 solution.py
+        input: |
+          ABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCAB
+        expected-output: "3"
+        comparison-method: exact
+        timeout: 2
+        max-score: 1
+
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        T1_RESULTS: ${{ steps.t1.outputs.result }}
+        T2_RESULTS: ${{ steps.t2.outputs.result }}
+        T3_RESULTS: ${{ steps.t3.outputs.result }}
+        T4_RESULTS: ${{ steps.t4.outputs.result }}
+        T5_RESULTS: ${{ steps.t5.outputs.result }}
+        T6_RESULTS: ${{ steps.t6.outputs.result }}
+        T7_RESULTS: ${{ steps.t7.outputs.result }}
+        T8_RESULTS: ${{ steps.t8.outputs.result }}
+        T9_RESULTS: ${{ steps.t9.outputs.result }}
+        T10_RESULTS: ${{ steps.t10.outputs.result }}
+        T11_RESULTS: ${{ steps.t11.outputs.result }}
+        T12_RESULTS: ${{ steps.t12.outputs.result }}
+        T13_RESULTS: ${{ steps.t13.outputs.result }}
+        T14_RESULTS: ${{ steps.t14.outputs.result }}
+        T15_RESULTS: ${{ steps.t15.outputs.result }}
+        T16_RESULTS: ${{ steps.t16.outputs.result }}
+        T17_RESULTS: ${{ steps.t17.outputs.result }}
+        T18_RESULTS: ${{ steps.t18.outputs.result }}
+        T19_RESULTS: ${{ steps.t19.outputs.result }}
+        T20_RESULTS: ${{ steps.t20.outputs.result }}
+      with:
+        runners: t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16,t17,t18,t19,t20
